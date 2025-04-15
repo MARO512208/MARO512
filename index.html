@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>MARO512 | مبرمج محترف</title>
+    <style>
+        .typewriter h2 span {
+            overflow: hidden;
+            border-right: .15em solid #3498db;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3498db; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">MARO512</a>
+        <nav class="navigation">
+            <a href="#skills">المهارات</a>
+            <a href="#projects">المشاريع</a>
+            <a href="#contact">التواصل</a>
+        </nav>
+    </header>
+
+    <section class="main" id="home">
+        <div class="profile-container">
+            <img src="default-profile.png" alt="صورة الملف الشخصي" class="profile-img">
+            <div class="text-content">
+                <div class="typewriter">
+                    <h2>مرحباً، أنا <span>مطور محترف</span></h2>
+                </div>
+                <h3><i class="fas fa-terminal"></i> مبرمج ومطور ويب</h3>
+                <h4><span class="code-tag">&lt;MARO512&gt;</span> متخصص في حلول البرمجة <span class="code-tag">&lt;/MARO512&gt;</span></h4>
+                
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="title">terminal</span>
+                    </div>
+                    <div class="code-content">
+                        <p><span class="prompt">$</span> npm init maro512-portfolio</p>
+                        <p><span class="prompt">$</span> <span class="typed-text">مبرمج متخصص في تطوير الويب والحلول البرمجية</span></p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/201064795692" class="main-btn">
+                    <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+                </a>
+                
+                <div class="social-icons">
+                    <a href="tel:+201064795692" title="اتصال"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/201064795692" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المهارات كما هو بدون تعديل -->
+    <!-- قسم المشاريع كما هو بدون تعديل -->
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معي</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>الهاتف</h3>
+                        <p>+201064795692</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>واتساب</h3>
+                        <p>متاح للتواصل الفوري</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>mr2371143@gmail.com</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="الموضوع">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="رسالتك" required></textarea>
+                    </div>
+                    <button type="submit" class="main-btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MARO512 | جميع الحقوق محفوظة</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.skill-category, .project-card, .info-item, .form-group');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+
+            const skillBars = document.querySelectorAll('.skill-level');
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => {
+                skillsObserver.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>
